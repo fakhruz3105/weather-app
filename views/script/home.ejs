@@ -1,0 +1,51 @@
+<script>
+let lat, lon;
+
+if ('geolocation' in navigator) {
+    console.log('Geolocation available');
+    navigator.geolocation.getCurrentPosition(async position => {
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+        getWeather(lat, lon);      
+    }, error => {
+        if(error.message === 'User denied Geolocation') {
+            lat = 3.139003;
+            lon = 101.686855;
+            getWeather(lat, lon);
+            document.getElementById('error').textContent = 'Please enable your location for local weather forecast';
+            document.getElementById('defLocation').textContent = '(Location is set to default)';
+        }
+    });
+} else {
+    console.log('Geolocation unavailable');
+    lat = 3.139003;
+    lon = 101.686855;
+    getWeather(lat, lon);
+    document.getElementById('error').textContent = 'Location is unavailable';
+    document.getElementById('defLocation').textContent = '(Location is set to default)';
+}
+
+async function getWeather(lat, lon) {
+    const data = { lat, lon };
+    document.getElementById('latitude').textContent = lat;
+    document.getElementById('longitude').textContent = lon;
+
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+    const res = await fetch('/api', options);
+    const json = await res.json();
+    const weather = JSON.parse(json.body);
+
+    console.log(JSON.parse(json.body));
+}
+
+
+
+
+
+</script>

@@ -1,0 +1,25 @@
+img {
+    display: inline-table;
+    vertical-align: middle;
+    align-items: center;
+    
+}
+
+.overall {
+    height: 10%;
+    width: auto;
+    align-content: center;
+}
+
+#icon {
+    vertical-align: middle;
+}
+
+.forecast {
+    text-align: left;
+}
+
+.tBody {
+    text-align: center;
+    font-size: small;
+}

@@ -5,6 +5,7 @@ require('dotenv').config();
 const app = express();
 
 //Setup ejs
+app.use( express.static("public"));
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 

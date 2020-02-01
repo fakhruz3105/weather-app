@@ -1,1 +1,56 @@
-<h1 class="text-center mb-4 mt-4">Weather App</h1>
+<script src="script/home.js"></script>
+
+<h1 class="text-center mb-3 mt-3">Weather App</h1>
+<div style="margin-right: 20%; margin-left: 20%;">
+    <p><span class="alert-danger" id="error"></span></p>
+    <p>Your location (<span id="latitude"></span>, <span id="longitude"></span>)</p>
+    <p><span id="location"></span></p>
+    <p><span class="alert-warning" id="defLocation"></span></p>
+    <table class="table table-striped table-bordered">
+        <thead style="text-align: center;">
+            <tr>
+                <th style="width: 20%;">Date</th>
+                <th style="width: 40%;">Weather</th>
+                <th style="width: 40%;">Forecast</th>
+            </tr>
+        </thead>
+        <tbody class="tBody">
+            <tr>
+                <td id="icon">
+                    <span id="dateToday"></span><br>
+                    <span id="dayToday"></span>
+                </td>
+                <td id="icon">
+                    <img id="iconToday" src="" alt="" class="overall"><br>
+                    <span id="overallToday">dqwdwq</span>
+                </td>
+                <td class="forecast">
+                    Morning: <span id="morningToday"></span><br>
+                    Afternoon: <span id="afternoonToday"></span><br>
+                    Night: <span id="nightToday"></span><br>
+                    Min Temp: <span id="minToday"></span>&#8451;<br>
+                    Max Temp: <span id="maxToday"></span>&#8451;
+                </td>
+            </tr>
+            <tr>
+                <td id="icon">
+                    <span id="dateTomorrow"></span><br>
+                    <span id="dayTomorrow"></span>
+                </tdid="icon">
+                <td id="icon">
+                    <img id="iconTomorrow" src="" alt="" class="overall"><br>
+                    <span id="overallTomorrow">dqwdwq</span>
+                </td>
+                <td class="forecast">
+                    Morning: <span id="morningTomorrow"></span><br>
+                    Afternoon: <span id="afternoonTomorrow"></span><br>
+                    Night: <span id="nightTomorrow"></span><br>
+                    Min Temp: <span id="minTomorrow"></span>&#8451;<br>
+                    Max Temp: <span id="maxTomorrow"></span>&#8451;
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
